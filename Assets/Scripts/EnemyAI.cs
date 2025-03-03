@@ -36,6 +36,8 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown = 2f;
     private float currentCooldown = 0f;
 
+    public int damage = 1;
+
     // Méthode appelée au début de l'exécution
     void Start()
     {
@@ -136,7 +138,7 @@ public class EnemyAI : MonoBehaviour
 
         if(Vector2.Distance(transform.position, target.position) <= attackRange)
         {
-            Destroy(target.gameObject);
+            target.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 
