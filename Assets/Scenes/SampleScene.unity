@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &271481748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -300,12 +300,14 @@ MonoBehaviour:
   speed: 120
   nextWpDistance: 1
   attackRange: 1.5
+  detectionRange: 7
   seeker: {fileID: 271481752}
   rb: {fileID: 271481750}
   animator: {fileID: 271481754}
   spriteRenderer: {fileID: 271481748}
   attackCooldown: 2
   damage: 1
+  maxHealth: 10
 --- !u!114 &271481752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1702,7 @@ Transform:
   m_GameObject: {fileID: 1371488313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.61, y: -3.52, z: 0}
+  m_LocalPosition: {x: -5.17, y: -2.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1777,7 +1779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1.5
-  damage: 10
+  damage: 1
+  knockbackForce: 5
   spriteRenderer: {fileID: 1371488316}
   animator: {fileID: 1371488318}
   playerHealth: {fileID: 1371488321}
@@ -1793,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5479356f3f90a4eafa4a71f3ce06ad2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
   isAlive: 1
   healthbarUI: {fileID: 1898083029}
   hpPrefab: {fileID: 5673060677688830056, guid: a72fdf1b88cfb475ea2bda0134790514, type: 3}
