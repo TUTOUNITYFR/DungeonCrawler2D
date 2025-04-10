@@ -12,18 +12,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
 
+    public PlayerHealth playerHealth;
+
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        movement = movement.normalized;
-
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        if(movement.x != 0)
+        if(playerHealth.isAlive)
         {
-            spriteRenderer.flipX = movement.x < 0;
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            movement = movement.normalized;
+
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            if(movement.x != 0)
+            {
+                spriteRenderer.flipX = movement.x < 0;
+            }
         }
     }
 

@@ -10,9 +10,11 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator animator;
 
+    public PlayerHealth playerHealth;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && playerHealth.isAlive)
         {
             PerformAttack();
         }
