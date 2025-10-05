@@ -4,7 +4,9 @@ public class PlayerAttack : MonoBehaviour
 {
     public float attackRange = 1.5f;
 
-    public int damage = 10;
+    public int damage = 1;
+
+    public int knockbackForce = 5;
 
     public SpriteRenderer spriteRenderer;
 
@@ -36,9 +38,11 @@ public class PlayerAttack : MonoBehaviour
 
                 if(Vector2.Dot(attackDirection, directionToEnemy) > 0)
                 {
-                    // Retirer des points de vie à l'ennemi
-                    Debug.Log("L'attaque a touché l'ennemi !");
-                    Destroy(collider.gameObject);
+                    EnemyAI enemyScript = collider.GetComponent<EnemyAI>();
+                    enemyScript.TakeDamage(damage);
+
+                    Vector2 knockbackDirection = (collider.transform.position - transform.position).normalized;
+                    enemyScript.rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
                 }
             }
         }
