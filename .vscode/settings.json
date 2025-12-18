@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DungeonCrawler2D.sln"
+    "dotnet.defaultSolution": "DungeonCrawler2D.slnx"
 }
