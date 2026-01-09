@@ -36,4 +36,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.linearVelocity = movement * moveSpeed;
     }
+
+    public void MultiplySpeed(float speedMultiplier)
+    {
+        moveSpeed *= speedMultiplier;
+    }
 }

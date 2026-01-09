@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -46,6 +47,11 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MultiplyDamages(float damageMultiplier)
+    {
+        damage = (int)Math.Ceiling(damage * damageMultiplier);
     }
 
     void OnDrawGizmosSelected()

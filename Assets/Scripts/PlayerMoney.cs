@@ -6,23 +6,8 @@ public class PlayerMoney : MonoBehaviour
     public Text coinText;
     public int currentCoins;
 
-    public static PlayerMoney Instance;
-
-    void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-    }
-
     void Start()
     {
-        if(PlayerPrefs.HasKey("Money"))
-        {
-            currentCoins = PlayerPrefs.GetInt("Money");
-        }
-
         coinText = GameObject.FindGameObjectWithTag("CoinsText").GetComponent<Text>();
         UpdateCoinsCount();
     }
@@ -32,9 +17,9 @@ public class PlayerMoney : MonoBehaviour
         coinText.text = currentCoins.ToString();
     }
 
-    public void AddCoin()
+    public void AddCoin(int coinsCount = 1)
     {
-        currentCoins++;
+        currentCoins = currentCoins + coinsCount;
         UpdateCoinsCount();
     }
 

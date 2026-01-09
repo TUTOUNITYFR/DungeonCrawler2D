@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8681201930498014029}
   - component: {fileID: 7795873216249439252}
   - component: {fileID: 5153021367541196639}
+  - component: {fileID: 8715946635599276483}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -250,3 +251,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   coinText: {fileID: 0}
   currentCoins: 0
+--- !u!114 &8715946635599276483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177906430069101971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d43039aab144653a451508c00db6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerAttack: {fileID: 1935313339182314331}
+  playerHealth: {fileID: 7795873216249439252}
+  playerMovement: {fileID: 6851803971064940917}
+  playerMoney: {fileID: 5153021367541196639}

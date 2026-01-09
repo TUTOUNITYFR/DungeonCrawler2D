@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
-    private int currentHealth;
+    public int currentHealth;
 
     public bool isAlive = true;
 
@@ -51,5 +51,12 @@ public class PlayerHealth : MonoBehaviour
     public void DisablePlayerVisual()
     {
         spriteRenderer.enabled = false;
+    }
+
+    public void IncreaseMaxHealth(int hpCount)
+    {
+        maxHealth += hpCount;
+        currentHealth += hpCount;
+        UpdateHealthbarUI();
     }
 }
